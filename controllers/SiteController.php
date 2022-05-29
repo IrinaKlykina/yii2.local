@@ -82,7 +82,7 @@ class SiteController extends Controller
                 'pageSize' => 20,
             ],
         ]);
-        return $this->render('cities', ['dataProvider=>$dataProvider']);
+        return $this->render('cities', ['dataProvider'=>$dataProvider]);
     }
     public function actionLogin()
     {

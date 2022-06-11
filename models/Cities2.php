@@ -9,7 +9,7 @@ class Cities2 extends ActiveRecord
 {
     public static function tableName()
     {
-        return 'city2';
+       // return 'city2';
     }
     public function writeCity()
     {

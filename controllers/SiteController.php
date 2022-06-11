@@ -12,7 +12,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Cities;
-
+use app\models\Cities2;
 
 
 class SiteController extends Controller
@@ -83,6 +83,24 @@ class SiteController extends Controller
             ],
         ]);
         return $this->render('cities', ['dataProvider'=>$dataProvider]);
+    }
+    public function actionCities2()
+    {
+        $dataProvider = new ActiveDataProvider([
+            'query' => Cities2::find(),
+            'pagination' => [
+                'pageSize' => 20,
+            ],
+        ]);
+        return $this->render('cities2', ['dataProvider'=>$dataProvider]);
+    }
+    public function actionAdd (){
+        $model = new Cities2();
+
+        if($model->load(Yii::$app->request->post())) {
+        return $this->redirect(['view','id'=>$model->id]);
+        }
+        return $this->render('edit',['model'=>$model]);
     }
     public function actionLogin()
     {

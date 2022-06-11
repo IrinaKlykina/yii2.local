@@ -2,6 +2,9 @@
 use yii\grid\GridView;
 //var_dump($dataProvider);
 //die();
+use yii\helpers\Html;
+
+echo Html::a('Добавить город',['add'],['class'=> 'btn btn-info']);
 
 echo GridView::widget([
     'dataProvider' => $dataProvider,

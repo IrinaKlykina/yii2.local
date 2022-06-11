@@ -11,7 +11,7 @@ class Cities2 extends ActiveRecord
     {
         return 'city2';
     }
-    public function WriteCity()
+    public function writeCity()
     {
         return [
             'name_of_the_city'=>'Название_города',

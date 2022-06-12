@@ -98,7 +98,11 @@ class SiteController extends Controller
         $model = new Cities2();
 
         if($model->load(Yii::$app->request->post())) {
-        return $this->redirect(['view','id'=>$model->id]);
+            $model->save();
+
+            //todo: возможно, говнокод
+            return $this->redirect(['site/cities2']);
+      //  return $this->redirect(['view','id'=>$model->id]);
         }
         return $this->render('edit',['model'=>$model]);
     }
